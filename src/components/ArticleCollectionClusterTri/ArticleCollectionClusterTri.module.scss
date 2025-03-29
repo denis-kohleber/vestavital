@@ -1,0 +1,16 @@
+.articleCollectionClusterTri {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.articleCollectionClusterTri > article {
+  max-width: 290px;
+}
+
+@media screen and (max-width: 650px) {
+  .articleCollectionClusterTri > article {
+    max-width: none;
+  }
+}

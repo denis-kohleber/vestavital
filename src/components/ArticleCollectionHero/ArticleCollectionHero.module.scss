@@ -1,0 +1,16 @@
+.articleCollectionHero {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+
+  .secondRow {
+    display: flex;
+    gap: 15px;
+  }
+
+  @media screen and (max-width: 650px) {
+    .secondRow {
+      flex-flow: column;
+    }
+  }
+}

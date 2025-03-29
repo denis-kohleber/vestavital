@@ -1,0 +1,50 @@
+.mediaPictureContainer {
+  width: 100%;
+  min-height: min(50vh, 500px);
+  height: min(50vh, 500px);
+  max-height: 500px;
+  background-color: var(--priColor3);
+  overflow: hidden;
+  position: relative;
+}
+
+.mediaPictureContainer > img {
+  min-height: min(50vh, 500px);
+  height: min(50vh, 500px);
+  max-height: 500px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// On desktop, the collection img
+
+@media screen and (min-width: 600px) {
+  .mediaPictureContainer.collectionHeroSecondRow {
+    min-height: min(30vh, 400px);
+    height: min(30vh, 400px);
+    max-height: 400px;
+  }
+
+  .mediaPictureContainer.collectionHeroSecondRow > img {
+    min-height: min(30vh, 400px);
+    height: min(30vh, 400px);
+    max-height: 400px;
+  }
+}
+
+// On mobile, the collection img
+
+@media screen and (max-width: 600px) {
+  .mediaPictureContainer.collection {
+    min-height: min(35vh, 400px);
+    height: min(35vh, 400px);
+    max-height: 400px;
+  }
+
+  .mediaPictureContainer.collection > img {
+    min-height: min(35vh, 400px);
+    height: min(35vh, 400px);
+    max-height: 400px;
+  }
+}

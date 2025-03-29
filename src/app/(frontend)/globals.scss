@@ -1,0 +1,499 @@
+/* ----- COLORS & ROOT CONFIQ ----- */
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --priColor: #ffffff;
+  --priColor2: #fafafa;
+  --priColor3: #e6e6e6;
+  --borderColor: #e3e3e3;
+  --secColor: #202124;
+  --secColor2: #505050;
+  --secColor3: #666666;
+  --dateColor: #666666;
+  --accentColor: #ffa953 !important;
+  --accentColor2: #fac590 !important;
+  --accentColor3: #fce1c6 !important;
+  --authorColor: #202124;
+  --contentSpace: min(15vh, 200px);
+  --shadowAround: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+  --shadowOffset: 4px 4px 4px 1px rgba(0, 0, 0, 0.1);
+  --filterAccentColor: brightness(0) saturate(100%) invert(70%) sepia(45%) saturate(682%)
+    hue-rotate(335deg) brightness(101%) contrast(101%);
+}
+
+/* ----- Stop the drunk Raleway numbers ----- */
+.font {
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: 'lnum' 1;
+  -moz-font-feature-settings: 'lnum=1';
+  -ms-font-feature-settings: 'lnum' 1;
+  -o-font-feature-settings: 'lnum' 1;
+  -webkit-font-feature-settings: 'lnum' 1;
+  font-feature-settings: 'lnum' 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --priColor: #222222;
+    --priColor2: #181a15;
+    --priColor3: #303030;
+    --borderColor: #121212;
+    --secColor: #f1efed;
+    --secColor2: #f1efed;
+    --secColor3: #f1efed;
+    --dateColor: #c2c2c2;
+    --accentColor: #ffa953 !important;
+    --accentColor2: #fac590 !important;
+    --accentColor3: #fce1c6 !important;
+    --authorColor: #202124;
+    --filterAccentColor: brightness(0) saturate(100%) invert(70%) sepia(45%) saturate(682%)
+      hue-rotate(335deg) brightness(101%) contrast(101%);
+  }
+}
+
+/* ----- FIRST CSS RESET ----- */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----- SECOND CSS RESET ----- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+button {
+  background-color: var(--accentColor);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ----- GLOBAL STYLES ----- */
+
+body,
+#root {
+  background-color: var(--priColor2);
+  scroll-behavior: smooth;
+  /* width: 100%;
+    margin: 0; */
+  font-family: 'raleway', sans-serif;
+  color: var(--secColor);
+  /* Prevent highlighting on Touchscreens */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: clip;
+}
+
+/* Diable scrolling */
+.overflowHidden {
+  overflow: hidden;
+}
+
+/* Prevent the auto color change of Inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 0s 600000s,
+    color 0s 600000s !important;
+}
+
+/* || SKELETT - Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--priColor);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: var(--accentColor);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accentColor2);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*:focus {
+  outline: auto;
+  outline-color: var(--secColor);
+}
+
+/* ----- FALLBACK ----- */
+
+.fallback {
+  min-height: 200vh;
+}
+
+.fallbackComponent {
+  min-height: min(400px, 50vh);
+}
+
+/* ----- Prevent Input Zoom Safari ----- */
+
+@supports (-webkit-overflow-scrolling: touch) {
+  input {
+    font-size: 16px !important;
+  }
+}
+
+/* || SKELETT - Button-Animation-Preset */
+
+.btn-ani {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn-ani::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform-origin: left;
+  transform: translateX(-100%);
+  transition:
+    opacity 0.15s linear,
+    transform 0.15s linear;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+@media (hover: hover) {
+  .btn-ani:hover::before,
+  .btn-ani:focus::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+//  ------ Site-Wrapper ------
+
+.site-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1900px;
+  margin: auto;
+  justify-content: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.aside-banner {
+  flex: 1;
+  margin-top: 15px;
+  max-width: 450px;
+  min-width: 120px;
+  max-height: min(1200px, calc(100svh - 70px));
+  min-height: 50px;
+  position: sticky;
+  top: 70px;
+}
+
+.main {
+  flex: 10 0 0;
+  max-width: 1000px;
+  padding: 15px;
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  min-height: 70vh;
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        padding: 15px 8px;
+      }
+  }
+
+.top-banner {
+  min-height: 50px;
+  max-height: 450px;
+  height: 250px;
+  max-width: 1200px;
+  min-width: 120px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1250px) {
+  .top-banner {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top-banner {
+    height: 60px;
+  }
+}
+
+.main-banner {
+  min-height: 50px;
+  max-height: 450px;
+  height: 350px;
+  max-width: 1200px;
+  min-width: 120px;
+  width: 100%;
+}
+
+.section-also-interesting {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.multiplex-banner,
+.section-also-interesting {
+  width: 100%;
+  flex: 1;
+}
+
+// Loading-Page
+
+.loadingPage {
+  min-height: 100vh;
+  background-color: var(--priColor2);
+}
+
+// Provisorisch
+
+.top-banner {
+  display: none !important;
+}
+
+.section-also-interesting {
+  display: none !important;
+}
+
+.main-banner {
+  display: none !important;
+}

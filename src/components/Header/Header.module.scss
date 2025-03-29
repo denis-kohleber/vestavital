@@ -1,0 +1,24 @@
+/* || HEADER */
+
+.header {
+    width: 100%;
+    height: clamp(50px, 6vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--priColor);
+    padding-top: 15px;
+    position: relative;
+    z-index: 12;
+
+    .primaryLogo {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .primaryLogo:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+

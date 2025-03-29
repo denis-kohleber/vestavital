@@ -1,0 +1,89 @@
+.siteArticle {
+  background-color: var(--priColor);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadowAround);
+  position: relative;
+
+  .articleMainSection {
+    padding: 30px 30px;
+    // padding: 60px 30px; When Ads available
+    max-width: 650px;
+    margin: auto;
+    font-size: 1.2rem;
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    line-height: 180%;
+    font-weight: 450;
+    word-spacing: 1.5px;
+  }
+
+  @media screen and (max-width: 550px) {
+    .articleMainSection {
+    //   padding: 60px 15px; When Ads available
+      padding: 30px 15px;
+    }
+  }
+
+  .articleMainSection > h2 {
+    font-weight: 550;
+    font-size: 1.35rem;
+    display: flex;
+    gap: 11px;
+    align-items: stretch;
+    line-height: 150%;
+  }
+
+  .articleMainSection > h2 > .rectangleHeadline {
+    width: 12px;
+    background-color: var(--accentColor);
+    border-radius: 3px;
+  }
+
+  @media screen and (max-width: 420px) {
+    .articleMainSection {
+      font-size: 1.1rem;
+      line-height: 180%;
+      word-spacing: 1px;
+    }
+
+    .articleMainSection > h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .articleMainSection > ul > li {
+    margin-left: 30px;
+    padding-left: 2px;
+    font-weight: 450;
+  }
+
+  ul > li::marker {
+    color: var(--accentColor);
+    content: '♦  ';
+    font-size: 1.2em;
+  }
+
+  .articleMainSection > ol > li {
+    list-style: decimal;
+    margin-left: 23px;
+    padding-left: 8px;
+  }
+
+  ol > li::marker {
+    color: var(--accentColor);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .partingLine {
+    display: block;
+    background-color: var(--accentColor);
+    height: 5px;
+    width: 100px;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 60px;
+  }
+}

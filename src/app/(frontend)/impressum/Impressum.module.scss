@@ -1,0 +1,39 @@
+.impressum {
+    margin: auto;
+
+    .contentWrapper {
+        max-width: 600px;
+        width: 100%;
+
+        h2 {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        h4 {
+            margin-top: 15px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #315daf;
+            text-decoration: underline #315daf;
+            font-weight: 600;
+        }
+    }
+}

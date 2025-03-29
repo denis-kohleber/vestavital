@@ -1,0 +1,82 @@
+.articleHeroSection {
+  .articleHeroBody {
+    padding: 30px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-flow: column;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+
+    .articleHeroHeader {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .articleHeroHeader > * {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--dateColor);
+    }
+
+    .headline {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 140%;
+      max-width: max(85%, 450px);
+      min-width: 0;
+    }
+
+    .author {
+      font-weight: 500;
+      margin: -15px 0;
+      text-decoration: solid 1px underline var(--accentColor);
+      text-underline-offset: 2.5px;
+    }
+
+    .description {
+      max-width: max(70%, 450px);
+      font-weight: 500;
+      font-size: 1.45rem;
+      line-height: 170%;
+      letter-spacing: 0.5px;
+    }
+
+    @media screen and (max-width: 450px) {
+      .headline {
+        font-size: 1.7rem;
+      }
+
+      .description {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media screen and (max-width: 370px) {
+      .headline {
+        font-size: 1.5rem;
+      }
+    }
+
+    .partingLine {
+      background-color: var(--accentColor);
+      height: 5px;
+      width: 100px;
+      border-radius: 20px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .articleHeroBody {
+      padding: 30px 15px;
+    }
+  }
+}

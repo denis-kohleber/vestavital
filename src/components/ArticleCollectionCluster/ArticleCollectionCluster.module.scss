@@ -1,0 +1,16 @@
+.articleCollectionCluster {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+
+  .clusterRow {
+    display: flex;
+    gap: 15px;
+  }
+
+  @media screen and (max-width: 650px) {
+    .clusterRow {
+      flex-flow: column;
+    }
+  }
+}

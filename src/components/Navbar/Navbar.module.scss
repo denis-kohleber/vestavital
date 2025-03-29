@@ -1,0 +1,312 @@
+/* || NAVIGATION-BAR */
+
+.mainNav {
+  position: sticky;
+  height: 55px;
+  top: 0px;
+  z-index: 10;
+
+  .navWrapper {
+    background-color: var(--priColor);
+    box-shadow: var(--shadowAround);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -1px;
+    padding-top: 1px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .logoLink {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 12;
+  }
+
+  .logo {
+    height: 42px;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    animation: hideInitialAnimation 0.1s linear;
+  }
+
+  @keyframes hideInitialAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .logo.active {
+    opacity: 1;
+  }
+
+  @media (hover: hover) {
+    .logoLink:focus > * > .logo,
+    .logoLink:hover > * > .logo {
+      opacity: 1;
+    }
+  }
+
+  @media (pointer: coarse) {
+    .logoLink:focus > * > .logo,
+    .logoLink:active > * > .logo {
+      opacity: 1;
+    }
+  }
+
+  .navBtn {
+    background-color: var(--priColor);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  @media (hover: hover) {
+    .navBtn:hover > *,
+    .navBtn:focus > * {
+      filter: var(--filterAccentColor);
+    }
+  }
+
+  @media (pointer: coarse) {
+    .navBtn:active > *,
+    .navBtn:focus > * {
+      filter: var(--filterAccentColor);
+    }
+  }
+  .navBtnSearch {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 12;
+  }
+
+  .navBtnBurger {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  @media screen and (max-width: 1080px) {
+    .logoLink {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .navBtnBurger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .darkBg {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .darkBg.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000010;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.4s;
+  }
+
+  /* || NAVIGATION-BAR - NavLinks / NavMenu */
+
+  .navLinkContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 12;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: var(--secColor2);
+    font-size: 0.95rem;
+    font-weight: bold;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    min-width: 80px;
+    transition: transform 0.15s linear;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+  }
+
+  .navLink > img {
+    margin-bottom: 1px;
+  }
+
+  .navLink:nth-of-type(1) > img,
+  .navLink:nth-of-type(2) > img {
+    margin-bottom: 1.5px;
+  }
+
+  .navLink > * {
+    transition: transform 0.15s linear;
+  }
+
+  .navLink:after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 100px;
+    background-color: var(--accentColor2);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accentColor);
+  }
+
+  @media (hover: hover) {
+    .navLink:hover:after,
+    .navLink:focus:after {
+      transform: scaleX(1);
+    }
+
+    .navLink:hover,
+    .navLink:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (pointer: coarse) {
+    .navLink:focus:after,
+    .navLink:active:after {
+      transform: scaleX(1);
+    }
+
+    .navLink:focus,
+    .navLink:active {
+      transform: scale(1.1);
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    .navLink:after {
+      background-color: var(--accentColor2);
+      height: 80%;
+      right: auto;
+      left: 0;
+      bottom: auto;
+      width: 22px;
+      color: var(--secColor);
+      transform-origin: left center;
+    }
+
+    .navLinkContainer {
+      display: flex;
+      flex-flow: column;
+      position: absolute;
+      align-items: flex-start;
+      height: 100svh;
+      top: 0;
+      left: 0;
+      padding-top: 70px;
+      width: 250px;
+      gap: 0;
+      background-color: var(--priColor);
+      transform: translateX(-300px);
+      transition: transform 0.4s;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .navLink {
+      padding: 15px 15px 15px 35px;
+      width: 100%;
+      height: auto;
+      justify-content: start;
+    }
+    .navLinkSearch {
+      width: 240px;
+    }
+    .navLinkContainer.active {
+      transform: translateX(0);
+    }
+  }
+
+  /* || NAVIGATION-BAR - Hamburger Button */
+
+  .ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform: scale(1.5);
+  }
+  .hamRotate.active {
+    transform: rotate(45deg) scale(1.5);
+  }
+  .hamRotate180.active {
+    transform: rotate(180deg);
+  }
+  .line {
+    fill: none;
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
+    stroke: var(--secColor2);
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+  .ham .top {
+    stroke-dasharray: 40 82;
+  }
+  .ham .middle {
+    stroke-dasharray: 40 111;
+  }
+  .ham .bottom {
+    stroke-dasharray: 40 161;
+  }
+  .ham.active .top {
+    stroke-dasharray: 17 82;
+    stroke-dashoffset: -62px;
+  }
+  .ham.active .middle {
+    stroke-dashoffset: 23px;
+  }
+  .ham.active .bottom {
+    stroke-dashoffset: -83px;
+  }
+}
